@@ -7,7 +7,7 @@ function Todo (){
     const dispatch = useDispatch()
     return (
         <>
-        <div>Todos</div>
+        <div>Todos List:</div>
         <ul
         className="list-none"
         >
@@ -16,14 +16,11 @@ function Todo (){
                 className="my-4 flex justify-between items-center bg-zinc-800 rounded "
                 key={todo.id}
                 >
-                    <div
-                    className="text-white"
-                    >
-                        {todo.text}
+                    <div className="text-white">{todo.text}
                     </div>
                     <button
                     onClick = {()=>dispatch(removeTodo(todo.id))}
-                    className="text-whte bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
+                    className="text-whte bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-800 rounded text-md cursor-pointer"
                     >
                         <svg
                         xmlns="https://wwww.w3.org/2000/svg"

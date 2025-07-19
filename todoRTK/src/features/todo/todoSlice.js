@@ -13,7 +13,7 @@ export const todoSlice = createSlice({
         addTodo:(state, action) => {
             const todo = {
                 id: nanoid(),
-                text: action.payload.text,
+                text: action.payload,
             }
             state.todos.push(todo)
         },
@@ -22,7 +22,7 @@ export const todoSlice = createSlice({
         },
         updateTodo:(state, action)=>{
             const {id, newText} = action.payload;
-            const todoToUpdate = state.todos.find(todo => todo.id ===id);
+            const todoToUpdate = state.todos.find(todo => todo.id === id);
             if(todoToUpdate){
                 todoToUpdate.text = newText;
             }
